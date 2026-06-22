@@ -15,3 +15,5 @@ spec:
     namespace: giropops-senhas
   syncPolicy:
     automated: {}
+    syncOptions:
+      - CreateNamespace=true
