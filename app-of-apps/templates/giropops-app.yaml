@@ -1,8 +1,8 @@
-{{ if .Values.argocd.giropops.enabled }}
+{{ if .Values.argocd.giropopsSenhas.enabled }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: giropops
+  name: giropops-senhas
   namespace: argocd
 spec:
   project: giropops-senhas
