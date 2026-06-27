@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: giropops-senhas
+  namespace: argocd
+spec:
+  description: Projeto para o app giropops-senhas
+  sourceRepos:
+    - https://github.com/sergiocpmaricato/descomplicando-gitops-no-kubernetes-argocd.git
+  destinations:
+    - namespace: giropops-senhas
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace

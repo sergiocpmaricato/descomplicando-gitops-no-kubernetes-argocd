@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: random-logger
+  namespace: argocd
+spec:
+  description: Projeto para o app random-logger
+  sourceRepos:
+    - https://github.com/sergiocpmaricato/descomplicando-gitops-no-kubernetes-argocd.git
+  destinations:
+    - namespace: random-logger
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace
